@@ -5,12 +5,13 @@ VAR
 BEGIN
 IF (V1.lenght <> V2.length) THEN{
         WRITE("error: Ps cannot be calculated")}    
-    ELSE{
+    ELSE IF (i==j){
         FOR i FROM 0 TO V1.lenght-1 STEP 1  DO
            FOR j FROM 0 TO V2.lenght-1 STEP 1 DO
              Ps= Ps+V1[i]*V2[j];
-        END_FOR
+         END_FOR
         END_FOR}
+      END_IF
     END_IF
     RETURN (Ps) ;
 END
@@ -23,12 +24,13 @@ VAR
 BEGIN
     IF (V1.lenght<> V2.length) THEN{
         WRITE("error: Ps cannot be calculated")}    
-    ELSE{
+     ELSE IF (i==j){
         FOR i FROM 0 TO V1.lenght-1 STEP 1  DO
           FOR j FROM 0 TO V2.lenght-1 STEP 1 DO
-             Ps= Ps+V1[i]*V2[i]
+             Ps= Ps+V1[i]*V2[j]
         END_FOR
         END_FOR}
+      END_IF  
     END_IF
 END
 
